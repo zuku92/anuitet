@@ -1,0 +1,35 @@
+# script for anuitet grafic
+
+vada = int(input('vada'))
+procenti = float(input('procenti'))
+tanxa= float(input('tanxa'))
+anuiteti=procenti*0.57
+gadaxadeliprocenti = (tanxa*anuiteti/100)/12*vada
+mtlianigadasaxadi=tanxa+gadaxadeliprocenti
+yoveltviurishenatani=mtlianigadasaxadi/vada
+
+
+for i in range(1,vada+1):
+
+    tvisprocenti=gadaxadeliprocenti/vada
+    ziri=yoveltviurishenatani-tvisprocenti
+    darcheniliziri=tanxa-ziri
+
+    
+print(i-(vada-1),' ', yoveltviurishenatani,' ',tvisprocenti,'',ziri,'',darcheniliziri)
+
+tvisprocenti=darcheniliziri*0.57/100
+
+for j in range(2,vada+1):
+    tvisprocenti=darcheniliziri*0.57/100
+    ziri= yoveltviurishenatani-tvisprocenti
+    darcheniliziri=darcheniliziri-ziri
+
+    print(j,' ', yoveltviurishenatani,' ',tvisprocenti,'',ziri,'',darcheniliziri)
+    
+    if darcheniliziri < yoveltviurishenatani:
+            yoveltviurishenatani=darcheniliziri+(darcheniliziri*0.57/100)
+            tvisprocenti=yoveltviurishenatani*0.57/100
+
+            if darcheniliziri==0:
+                break
